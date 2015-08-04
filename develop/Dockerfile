@@ -9,15 +9,12 @@ RUN apk add --update \
     python \
     unrar \
     zip \
-    supervisor \
     && git clone -b $BRANCH --single-branch https://github.com/RuudBurger/CouchPotatoServer.git /couchpotato  \
     && mkdir /config \
     && mkdir /downloads \
     && adduser -D -h /couchpotato -s /sbin/nologin -u 5001 couchpotato \
     && chown -R couchpotato:couchpotato /couchpotato /config /downloads \
     && rm -rf /var/cache/apk/*
-
-COPY supervisord-couchpotato.ini /etc/supervisor.d/supervisord-couchpotato.ini
 
 VOLUME /config /downloads
 
