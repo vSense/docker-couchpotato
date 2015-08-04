@@ -10,14 +10,14 @@ Awesome PVR for usenet and torrents. Just fill in what you want to see and Couch
 # How to choose a tag
 
 Available tags:
--   latest : based on master branch
--   develop : based on develop branch
--   supervisord-latest : based on master branch
--   supervisord-develop : based on develop branch
+-   `latest` : based on master branch
+-   `develop` : based on develop branch
+-   `supervisord-latest` : based on master branch
+-   `supervisord-develop` : based on develop branch
 
 The above tags provide images with or without an init process (couchpotato or supervisor as PID 1)
 
-Depending on how you are planning to launch sickrage you have to choose the right image
+Depending on how you are planning to launch Couchpotato you have to choose the right image.
 
 # How to use this image.
 
@@ -29,17 +29,17 @@ You can test it by visiting `http://container-ip:5050` in a browser or, if you n
 
 	docker run -p 5050:5050 vsense/couchpotato:<yourtag>
 
-You can then go to `http://localhost:5050` or `http://host-ip:5050` in a browser.
+Then go to `http://localhost:5050` or `http://host-ip:5050` in a browser.
 
 # Overriding
 
 The image has two volumes :
 -   /config : contains sickrage configuration
--   /downloads : contains the files downloads by the service provider of your choice : NZB, Torrents or Others. Also postprocessed files. You can pretty much drop whatever you want here it is sort of a data volume.
+-   /downloads : contains the files downloaded by the service provider of your choice : NZB, Torrents or Others. Also postprocessed files. You can pretty much drop whatever you want here it is sort of a data volume.
 
-Couchpotato is installed in the /couchpotato directory but it is not a volume. If you wish to use host mount point instead of volumes it possible.
+Couchpotato is installed in the /couchpotato directory but it is not a volume. If you wish to use host mount point instead of volumes it's possible.
 
-To use an on-host config (for persistent configuration if you do not want to deal with volumes, that I can understand :D) :
+To use an on-host config (for persistent configuration if you do not want to deal with volumes:
 
     docker run --restart=always --name couchpotato --hostname couchpotato -v /srv/configs/couchpotato:/config vsense/couchpotato
 
@@ -47,11 +47,11 @@ To mount your download folder (you will probably need to do that anyway) :
 
     docker run --restart=always --name couchpotato --hostname couchpotato -v /srv/configs/couchpotato:/config -v /srv/seedbox:/downloads vsense/couchpotato
 
-You can even override couchpotato directory if you prefer to git clone on you host for whatever reason :
+You can even override couchpotato directory if you prefer to git clone on your host for whatever reason :
 
     docker run --restart=always --name couchpotato --hostname couchpotato -v /srv/couchpotato:/couchpotato vsense/couchpotato
 
-And you can combin the commands above as you like :
+And you can combine the commands above as you like :
 
     docker run --restart=always --name couchpotato --hostname couchpotato  -v /srv/seedbox:/downloads -v /srv/couchpotato:/couchpotato -v /srv/configs/couchpotato:/config vsense/couchpotato
 

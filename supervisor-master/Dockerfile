@@ -1,20 +1,21 @@
-# Couchpotato Dockerfile
-
 FROM alpine:3.2
 
 MAINTAINER vSense <docker@vsense.fr>
 
-RUN apk-install \
+ENV BRANCH master
+
+RUN apk add --update \
     git \
     python \
     unrar \
     zip \
     supervisor \
-    && git clone https://github.com/RuudBurger/CouchPotatoServer.git /couchpotato  \
+    && git clone -b $BRANCH --single-branch https://github.com/RuudBurger/CouchPotatoServer.git /couchpotato  \
     && mkdir /config \
     && mkdir /downloads \
     && adduser -D -h /couchpotato -s /sbin/nologin -u 5001 couchpotato \
-    && chown -R couchpotato:couchpotato /couchpotato /config /downloads
+    && chown -R couchpotato:couchpotato /couchpotato /config /downloads \
+    && rm -rf /var/cache/apk/*
 
 COPY supervisord-couchpotato.ini /etc/supervisor.d/supervisord-couchpotato.ini
 
