@@ -4,7 +4,7 @@ Awesome PVR for usenet and torrents. Just fill in what you want to see and Couch
 
 > [More info](https://couchpota.to/)
 
-![Sickrage](https://raw.githubusercontent.com/vSense/docker-couchpotato/master/logo.png)
+![Couchpotato](https://raw.githubusercontent.com/vSense/docker-couchpotato/master/logo.png)
 
 
 # How to choose a tag
@@ -21,7 +21,7 @@ Depending on how you are planning to launch Couchpotato you have to choose the r
 
 # How to use this image.
 
-Run Sickrage :
+Run Couchpotato :
 
 	docker run vsense/couchpotato:<yourtag>
 
@@ -34,7 +34,7 @@ Then go to `http://localhost:5050` or `http://host-ip:5050` in a browser.
 # Overriding
 
 The image has two volumes :
--   /config : contains sickrage configuration
+-   /config : contains couchpotato configuration
 -   /downloads : contains the files downloaded by the service provider of your choice : NZB, Torrents or Others. Also postprocessed files. You can pretty much drop whatever you want here it is sort of a data volume.
 
 Couchpotato is installed in the /couchpotato directory but it is not a volume. If you wish to use host mount point instead of volumes it's possible.
