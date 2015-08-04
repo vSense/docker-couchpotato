@@ -1,8 +1,8 @@
 # Couchpotato Dockerfile
 
-FROM gliderlabs/alpine
+FROM alpine:3.2
 
-MAINTAINER Kevin Lefevre <klefevre@vsense.fr>
+MAINTAINER vSense <docker@vsense.fr>
 
 RUN apk-install \
     git \
