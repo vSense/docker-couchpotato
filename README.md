@@ -15,7 +15,7 @@ Available tags:
 -   supervisord-latest : based on master branch
 -   supervisord-develop : based on develop branch
 
-The above tags provide images with or without an init process (sickrage or supervisor as PID 1)
+The above tags provide images with or without an init process (couchpotato or supervisor as PID 1)
 
 Depending on how you are planning to launch sickrage you have to choose the right image
 
