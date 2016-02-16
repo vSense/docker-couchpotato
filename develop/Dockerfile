@@ -20,6 +20,8 @@ VOLUME /config /downloads
 
 EXPOSE 5050
 
+USER couchpotato
+
 CMD ["--data_dir=/config"]
 
 ENTRYPOINT ["/usr/bin/env","python2","/couchpotato/CouchPotato.py"]
