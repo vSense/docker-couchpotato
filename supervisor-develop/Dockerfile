@@ -10,6 +10,8 @@ RUN apk add --update \
     unrar \
     zip \
     supervisor \
+    py-lxml \
+    py-openssl \
     && git clone -b $BRANCH --single-branch https://github.com/RuudBurger/CouchPotatoServer.git /couchpotato  \
     && mkdir /config \
     && mkdir /downloads \
