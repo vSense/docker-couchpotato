@@ -13,6 +13,7 @@ RUN apk add --update \
     py-openssl \
     py-cryptography \
     py-enum34 \
+    libffi-dev \
     && git clone -b $BRANCH --single-branch https://github.com/RuudBurger/CouchPotatoServer.git /couchpotato  \
     && mkdir /config \
     && mkdir /downloads \
