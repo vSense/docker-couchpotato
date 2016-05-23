@@ -12,6 +12,7 @@ RUN apk add --update \
     py-lxml \
     py-openssl \
     py-cryptography \
+    py-enum34 \
     && git clone -b $BRANCH --single-branch https://github.com/RuudBurger/CouchPotatoServer.git /couchpotato  \
     && mkdir /config \
     && mkdir /downloads \
